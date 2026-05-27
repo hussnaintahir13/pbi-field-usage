@@ -1,0 +1,11 @@
+Field,Kind,VisualCount
+Sales.Id,Column,5
+Sales.Date,Column,4
+Sales.Amount,Column,3
+Product.Name,Column,3
+Sales.Region,Column,2
+Product.Category,Column,2
+TotalAmount,Measure,2
+AvgPrice,Measure,1
+Customer.Id,Column,1
+Customer.Country,Column,1
