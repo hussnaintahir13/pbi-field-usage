@@ -1,5 +1,8 @@
 # Field Usage for Power BI
 
+## Quick start (non-technical)
+New here? Read **[HOW-TO-USE.md](HOW-TO-USE.md)** for a plain-English guide.
+
 Find out which fields are used in a Power BI report or page and how many visuals reference each one. Two pieces:
 
 1. **`parser/pbix_field_usage.py`** — reads a `.pbix` file and emits CSVs of field usage.

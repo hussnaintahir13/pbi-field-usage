@@ -71,6 +71,6 @@
             }
         }
     ],
-    "supportsHighlight": true,
+    "supportsHighlight": false,
     "privileges": []
 }
