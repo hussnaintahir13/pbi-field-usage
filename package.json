@@ -1,0 +1,43 @@
+{
+  "name": "trustscore-data-quality-scorecard",
+  "version": "1.0.0",
+  "description": "TrustScore \u2014 a Power BI custom visual that surfaces a 0\u2013100 data quality score with status badge, gauge, and a breakdown across completeness, duplicates, freshness, outliers and validation rules.",
+  "keywords": [
+    "powerbi",
+    "powerbi-visuals",
+    "data-quality",
+    "scorecard",
+    "trustscore"
+  ],
+  "scripts": {
+    "pbiviz": "pbiviz",
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "tsc --noEmit"
+  },
+  "author": {
+    "name": "Syed Hussnain Tahir Sherazi",
+    "email": "contact@syedhussnain.co.uk",
+    "url": "https://www.syedhussnain.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hussnaintahir13/pbi-field-usage"
+  },
+  "dependencies": {
+    "powerbi-visuals-api": "5.1.0",
+    "powerbi-visuals-utils-formattingmodel": "5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^9.0.0",
+    "eslint-plugin-powerbi-visuals": "^1.1.1",
+    "globals": "^17.4.0",
+    "less": "^4.2.0",
+    "powerbi-visuals-tools": "^5.4.0",
+    "typescript": "^5.4.0"
+  }
+}
