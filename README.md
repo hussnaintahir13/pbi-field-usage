@@ -39,6 +39,10 @@ python -m pytest -v
 
 Pre-built package: `visual/fieldUsageVisual/dist/fieldUsageVisualB300348A30D34EED89F61081A3217C30.1.0.0.0.pbiviz`
 
+> **Which file do I import?** Power BI rejects a visual built for a newer API than your Desktop supports ("isn't a valid custom visual").
+> - **Older Power BI Desktop (e.g. April 2023):** use `visual/fieldUsageVisual2023/dist/fieldUsage202376C926ECE9D74B8A85180AFE65D7C414.1.0.0.0.pbiviz` — it's built against **API 5.1.0** and imports on April 2023 and all later versions. It appears as **"Field Usage (PBI 2023)"**.
+> - **Recent Power BI Desktop:** either file works; the default one above is built against API 5.11.0.
+
 Install into Power BI Desktop:
 
 1. Open Power BI Desktop.

@@ -14,6 +14,14 @@ visual/fieldUsageVisual/dist/*.js
 visual/fieldUsageVisual/dist/*.js.map
 visual/fieldUsageVisual/dist/visual.prod.js
 visual/fieldUsageVisual/dist/assets/
+visual/fieldUsageVisual2023/.tmp/
+visual/fieldUsageVisual2023/webpack.statistics.*.html
+visual/fieldUsageVisual2023/dist/drop/
+visual/fieldUsageVisual2023/dist/package.json
+visual/fieldUsageVisual2023/dist/*.js
+visual/fieldUsageVisual2023/dist/*.js.map
+visual/fieldUsageVisual2023/dist/visual.prod.js
+visual/fieldUsageVisual2023/dist/assets/
 
 # Python
 __pycache__/

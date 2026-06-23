@@ -1,0 +1,76 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Field",
+            "name": "field",
+            "kind": "Grouping",
+            "description": "The field name (qualified, e.g. Sales.Id)"
+        },
+        {
+            "displayName": "Usage Count",
+            "name": "count",
+            "kind": "Measure",
+            "description": "Number of visuals that use this field"
+        },
+        {
+            "displayName": "Kind",
+            "name": "kind",
+            "kind": "Grouping",
+            "description": "Optional kind label (Column / Measure / HierarchyLevel)"
+        }
+    ],
+    "objects": {
+        "barStyle": {
+            "properties": {
+                "barColor": {
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fontSize": {
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "showValues": {
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "field": { "max": 1 },
+                    "count": { "max": 1 },
+                    "kind": { "max": 1 }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "bind": { "to": "field" } },
+                        { "bind": { "to": "kind" } }
+                    ],
+                    "dataReductionAlgorithm": { "top": { "count": 1000 } }
+                },
+                "values": {
+                    "select": [
+                        { "bind": { "to": "count" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "supportsHighlight": false,
+    "privileges": []
+}

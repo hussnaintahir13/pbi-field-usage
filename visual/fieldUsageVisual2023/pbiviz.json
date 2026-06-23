@@ -1,0 +1,26 @@
+{
+    "visual": {
+        "name": "fieldUsage2023",
+        "displayName": "Field Usage (PBI 2023)",
+        "guid": "fieldUsage202376C926ECE9D74B8A85180AFE65D7C414",
+        "visualClassName": "Visual",
+        "version": "1.0.0.0",
+        "description": "Shows how many visuals on a report or page use each field. Built for Power BI Desktop April 2023 and later (API 5.1.0). Pair with the pbix_field_usage.py parser.",
+        "supportUrl": "https://example.com/field-usage-visual",
+        "gitHubUrl": ""
+    },
+    "apiVersion": "5.1.0",
+    "author": {
+        "name": "Field Usage Visual",
+        "email": "noreply@example.com"
+    },
+    "assets": {
+        "icon": "assets/icon.png"
+    },
+    "externalJS": null,
+    "style": "style/visual.less",
+    "capabilities": "capabilities.json",
+    "dependencies": null,
+    "stringResources": [],
+    "version": "1.0.0.0"
+}
