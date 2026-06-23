@@ -22,6 +22,14 @@ visual/fieldUsageVisual2023/dist/*.js
 visual/fieldUsageVisual2023/dist/*.js.map
 visual/fieldUsageVisual2023/dist/visual.prod.js
 visual/fieldUsageVisual2023/dist/assets/
+visual/trustScoreDataQualityScorecard2023/.tmp/
+visual/trustScoreDataQualityScorecard2023/webpack.statistics.*.html
+visual/trustScoreDataQualityScorecard2023/dist/drop/
+visual/trustScoreDataQualityScorecard2023/dist/package.json
+visual/trustScoreDataQualityScorecard2023/dist/*.js
+visual/trustScoreDataQualityScorecard2023/dist/*.js.map
+visual/trustScoreDataQualityScorecard2023/dist/visual.prod.js
+visual/trustScoreDataQualityScorecard2023/dist/assets/
 
 # Python
 __pycache__/

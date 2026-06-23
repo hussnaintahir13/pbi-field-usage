@@ -1,0 +1,25 @@
+{
+  "visual": {
+    "name": "trustScoreDataQualityScorecard",
+    "displayName": "TrustScore Data Quality Scorecard",
+    "guid": "trustScoreDataQualityScorecard6FA0A1B24F1F49B8B3C5C9C0A7F7E3D2",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "A data quality scorecard with a 0\u2013100 trust score, status badge, gauge, and a breakdown across completeness, duplicates, freshness, outliers and validation rules.",
+    "supportUrl": "https://github.com/hussnaintahir13/trustscore-data-quality-scorecard/issues",
+    "gitHubUrl": "https://github.com/hussnaintahir13/trustscore-data-quality-scorecard"
+  },
+  "apiVersion": "5.1.0",
+  "author": {
+    "name": "Syed Hussnain Tahir Sherazi",
+    "email": "contact@syedhussnain.co.uk",
+    "url": "https://www.syedhussnain.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": [],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "stringResources": []
+}

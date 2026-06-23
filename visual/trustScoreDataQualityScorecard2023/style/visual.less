@@ -1,0 +1,108 @@
+.trustscore-root {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .ts-title {
+        font-weight: 600;
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    .ts-main {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+
+        &.compact {
+            gap: 8px;
+            .ts-score { font-size: 2.4em; }
+        }
+    }
+
+    .ts-score-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .ts-score {
+        font-size: 3.2em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .ts-badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 12px;
+        color: #fff;
+        font-size: 0.85em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .ts-gauge { flex-shrink: 0; }
+
+    .ts-breakdown {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .ts-card {
+        border: 1px solid #E1E1E1;
+        border-radius: 6px;
+        padding: 8px;
+        background: rgba(0,0,0,0.02);
+        outline: none;
+
+        &:focus { box-shadow: 0 0 0 2px #0078D4; }
+
+        .ts-card-label { font-size: 0.8em; opacity: 0.75; }
+        .ts-card-score { font-size: 1.6em; font-weight: 700; line-height: 1.1; }
+        .ts-card-detail { font-size: 0.75em; opacity: 0.7; margin-bottom: 4px; }
+        .ts-card-bar {
+            height: 4px; background: #EEE; border-radius: 2px; overflow: hidden;
+            .ts-card-bar-fill { height: 100%; transition: width 0.3s ease; }
+        }
+    }
+
+    .ts-warning {
+        margin-top: 10px;
+        padding: 8px 10px;
+        background: rgba(217, 130, 43, 0.12);
+        border-left: 3px solid #D9822B;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+
+    .ts-footer {
+        margin-top: 8px;
+        font-size: 0.75em;
+        opacity: 0.65;
+    }
+
+    .ts-empty {
+        text-align: center;
+        padding: 24px;
+        opacity: 0.7;
+        h3 { margin: 0 0 8px; }
+        p { margin: 0; font-size: 0.9em; }
+    }
+}
+
+@media (forced-colors: active) {
+    .trustscore-root {
+        .ts-badge { border: 1px solid CanvasText; }
+        .ts-card { border-color: CanvasText; }
+        .ts-warning { border-left-color: CanvasText; }
+    }
+}
