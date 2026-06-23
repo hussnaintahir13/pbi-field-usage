@@ -1,0 +1,81 @@
+{
+  "dataRoles": [
+    { "displayName": "Total Rows", "name": "totalRows", "kind": "Measure" },
+    { "displayName": "Null Count", "name": "nullCount", "kind": "Measure" },
+    { "displayName": "Duplicate Count", "name": "duplicateCount", "kind": "Measure" },
+    { "displayName": "Outlier Count", "name": "outlierCount", "kind": "Measure" },
+    { "displayName": "Failed Rule Count", "name": "failedRuleCount", "kind": "Measure" },
+    { "displayName": "Freshness Age", "name": "freshnessAge", "kind": "Measure" },
+    { "displayName": "Custom Score (optional)", "name": "customScore", "kind": "Measure" },
+    { "displayName": "Category (optional)", "name": "category", "kind": "Grouping" }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "totalRows": { "max": 1 },
+          "nullCount": { "max": 1 },
+          "duplicateCount": { "max": 1 },
+          "outlierCount": { "max": 1 },
+          "failedRuleCount": { "max": 1 },
+          "freshnessAge": { "max": 1 },
+          "customScore": { "max": 1 },
+          "category": { "max": 1 }
+        }
+      ],
+      "categorical": {
+        "categories": {
+          "for": { "in": "category" }
+        },
+        "values": {
+          "select": [
+            { "bind": { "to": "totalRows" } },
+            { "bind": { "to": "nullCount" } },
+            { "bind": { "to": "duplicateCount" } },
+            { "bind": { "to": "outlierCount" } },
+            { "bind": { "to": "failedRuleCount" } },
+            { "bind": { "to": "freshnessAge" } },
+            { "bind": { "to": "customScore" } }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "display": {
+      "properties": {
+        "showGauge": { "type": { "bool": true } },
+        "showBreakdown": { "type": { "bool": true } },
+        "showWarning": { "type": { "bool": true } },
+        "showFooter": { "type": { "bool": true } },
+        "compactMode": { "type": { "bool": true } },
+        "decimalPlaces": { "type": { "numeric": true } },
+        "gaugeThickness": { "type": { "numeric": true } },
+        "fontSize": { "type": { "numeric": true } },
+        "titleText": { "type": { "text": true } }
+      }
+    },
+    "thresholds": {
+      "properties": {
+        "excellent": { "type": { "numeric": true } },
+        "good": { "type": { "numeric": true } },
+        "warning": { "type": { "numeric": true } },
+        "poor": { "type": { "numeric": true } }
+      }
+    },
+    "colors": {
+      "properties": {
+        "excellentColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "goodColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "warningColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "poorColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "criticalColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "backgroundColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "textColor": { "type": { "fill": { "solid": { "color": true } } } }
+      }
+    }
+  },
+  "supportsHighlight": false,
+  "supportsKeyboardFocus": true,
+  "privileges": []
+}

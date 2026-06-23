@@ -1,63 +1,61 @@
-# Field Usage — Simple Guide
+# TrustScore Data Quality Scorecard — Simple Guide
 
-## What this does
+## What this visual does
 
-This tool tells you which fields your Power BI report actually uses. It looks at every visual (chart, table, card) and counts how many of them use each field. Then it shows you the result as a simple bar list. The fields used the most sit at the top, so you can spot what matters and what no one uses.
+This visual tells you if you can trust your data. It takes a few numbers about your data — like how many rows it has, how many values are missing, and how old it is — and turns them into one easy score from 0 to 100. It shows that score on a gauge with a colored status badge, so anyone can see at a glance whether the data behind a report is safe to use.
 
-## Step 1 — Make the summary file (Python parser)
+## What data you need
 
-The first part is a small program that reads your report file and writes a spreadsheet (a CSV file).
+Drop your measures into these field wells. Most are optional, but the more you add, the better the score.
 
-1. You need **Python** installed on your computer. If you do not have it, ask your IT team or get it from [python.org](https://www.python.org/).
-2. Find your report file. It is the `.pbix` file that Power BI Desktop saves.
-3. Open a terminal (PowerShell) in the project folder and run this command. Replace `MyReport.pbix` with the path to your own report:
+- **Total Rows** — the total number of rows in your data. Add this if you want the visual to work out the score for you. (Recommended)
+- **Null Count** — how many values are blank or missing. (Optional)
+- **Duplicate Count** — how many rows are repeated. (Optional)
+- **Outlier Count** — how many values look unusual or out of range. (Optional)
+- **Failed Rule Count** — how many of your data checks did not pass. (Optional)
+- **Freshness Age** — how old the data is, in hours since the last refresh. (Optional)
+- **Custom Score (optional)** — if you already work out your own trust score somewhere else, put it here. The visual will use this number directly and skip its own math. (Optional)
+- **Category (optional)** — a label for the data, such as a table or report name. It shows up in the title. (Optional)
 
-   ```powershell
-   python parser\pbix_field_usage.py "MyReport.pbix" --out-dir out
-   ```
+## How to add it to your report (step by step)
 
-4. This makes two CSV files inside a folder called `out`. The one you want is the **summary** file. Its name ends with `_field_usage_summary.csv` (for example, `out\MyReport_field_usage_summary.csv`).
-
-The summary file has three columns: **Field**, **Kind**, and **VisualCount**.
-
-Want to see what the output looks like before you run it? Open the example file at `sample\sample_field_usage_summary.csv`. It shows the same three columns filled in with sample data.
-
-## Step 2 — Load the CSV into Power BI
-
-Now bring that summary file into Power BI Desktop.
-
-1. Open Power BI Desktop.
-2. On the **Home** ribbon, click **Get Data**.
-3. Choose **Text/CSV**.
-4. Find and pick your `_field_usage_summary.csv` file, then click **Load**.
-
-Your three columns (Field, Kind, VisualCount) are now ready to use.
-
-## Step 3 — Add the visual to your report
-
-1. In the **Visualizations** pane, click the **•••** (more options) button.
-2. Choose **Import a visual from a file**.
-3. If a warning about custom visuals appears, click **Import**.
-4. Pick the file **visual\fieldUsageVisual\dist\fieldUsageVisualB300348A30D34EED89F61081A3217C30.1.0.0.0.pbiviz** and open it.
-5. Click the new icon in the Visualizations pane to add the visual to the page.
-6. Drag the CSV columns into the wells:
-   - Put the **Field** column into the **Field** well.
-   - Put the **VisualCount** column into the **Usage Count** well. Then click the small arrow next to it and set it to **Sum**.
-   - (Optional) Put the **Kind** column into the **Kind** well.
-
-You should now see a bar list, sorted with the most-used fields on top.
+1. Open Power BI Desktop and open or create a report.
+2. In the **Visualizations** pane, click the **•••** (more options) button.
+3. Choose **Import a visual from a file**.
+4. If a warning about custom visuals appears, click **Import**.
+5. Pick the file **dist\trustScoreDataQualityScorecard6FA0A1B24F1F49B8B3C5C9C0A7F7E3D2.1.0.0.0.pbiviz** and open it.
+6. Click the new icon in the Visualizations pane to add the visual to the page.
+7. Select the visual, then drag your fields into the wells listed above.
 
 ## Buttons & options you can change
 
-Click the **Format** (paint roller) icon to change how the visual looks. Under **Bar style** you can change:
+Click the visual, then open the **Format** pane (the paint roller icon) to find these settings.
 
-- **Bar color** — pick the color of the bars.
-- **Text size** — make the labels bigger or smaller.
-- **Show counts on bars** — turn the number on each bar on or off.
+**Display**
+- **Show gauge** — turn the round score gauge on or off.
+- **Show breakdown** — show or hide the cards that explain each part of the score.
+- **Show warning message** — show or hide the panel that points out the biggest risks.
+- **Show footer** — show or hide the small text at the bottom.
+- **Compact mode** — shrink everything to fit a small tile.
+- **Score decimal places** — how many decimal points to show on the score (0 means a whole number).
+- **Gauge thickness (px)** — how thick the gauge ring looks.
+- **Font size** — make the text bigger or smaller.
+- **Title** — type your own title for the visual.
+
+**Thresholds**
+- **Excellent ≥** — the score needed to count as Excellent (default 90).
+- **Good ≥** — the score needed to count as Good (default 75).
+- **Warning ≥** — the score needed to count as Warning (default 60).
+- **Poor ≥** — the score needed to count as Poor (default 40). Anything below this is Critical.
+
+**Colors**
+- **Excellent**, **Good**, **Warning**, **Poor**, **Critical** — pick the color for each status level.
+- **Background** — the color behind the visual.
+- **Text** — the color of the words.
 
 ## If it looks empty or wrong
 
-- Make sure the **Usage Count** well is set to **Sum**. If it shows "Count" instead, the numbers will be wrong.
-- Check that you loaded the **summary** file (the one ending in `_field_usage_summary.csv`), not the rows file.
-- Make sure the **Field** column is in the **Field** well and **VisualCount** is in the **Usage Count** well.
-- If the visual is missing from the pane, go back to Step 3 and import the `.pbiviz` file again.
+- **It looks empty?** Make sure you dragged at least one measure into a field well. Add **Total Rows** so the visual can work out a score.
+- **The score seems off?** Check that each measure is in the right well. For example, **Freshness Age** should be in hours, not days.
+- **Wrong status color or label?** Open the **Thresholds** card and check the cutoff numbers match what you expect.
+- **Still stuck?** Click the visual and confirm your measures return real numbers, not blanks or errors, in your data model.

@@ -1,45 +1,11 @@
-# Node
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# pbiviz build artifacts (keep the .pbiviz, drop the rest)
+dist/
 .tmp/
-visual/fieldUsageVisual/.tmp/
-visual/fieldUsageVisual/webpack.statistics.*.html
-visual/fieldUsageVisual/dist/drop/
-visual/fieldUsageVisual/dist/package.json
-visual/fieldUsageVisual/dist/*.js
-visual/fieldUsageVisual/dist/*.js.map
-visual/fieldUsageVisual/dist/visual.prod.js
-visual/fieldUsageVisual/dist/assets/
-visual/fieldUsageVisual2023/.tmp/
-visual/fieldUsageVisual2023/webpack.statistics.*.html
-visual/fieldUsageVisual2023/dist/drop/
-visual/fieldUsageVisual2023/dist/package.json
-visual/fieldUsageVisual2023/dist/*.js
-visual/fieldUsageVisual2023/dist/*.js.map
-visual/fieldUsageVisual2023/dist/visual.prod.js
-visual/fieldUsageVisual2023/dist/assets/
-
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-.pytest_cache/
-.venv/
-venv/
-*.egg-info/
-
-# OS / editors
+*.pbiviz
+!release/*.pbiviz
+webpack.statistics.*.html
+.vscode/
+.idea/
+*.log
 .DS_Store
 Thumbs.db
-.vs/
-.idea/
-*.swp
-
-# Secrets
-*.pem
-*.pfx
-*.key

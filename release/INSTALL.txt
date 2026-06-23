@@ -1,0 +1,74 @@
+TRUSTSCORE DATA QUALITY SCORECARD - INSTALL GUIDE
+=================================================
+
+This folder contains the ready-to-use Power BI custom visual file:
+    trustScoreDataQualityScorecard*.1.0.0.0.pbiviz
+
+You do NOT need Node.js, the pbiviz CLI, or any developer tooling to
+install this visual. Just download the .pbiviz file and import it.
+
+
+HOW TO INSTALL IN POWER BI DESKTOP
+----------------------------------
+
+1. Download the .pbiviz file from this folder.
+   - In GitHub: click the filename, then click "Download raw file".
+
+2. Open Power BI Desktop and open the report you want to add it to.
+
+3. In the Visualizations pane on the right, click the three dots ("...")
+   at the bottom of the icon grid.
+
+4. Choose "Import a visual from a file".
+
+5. Click OK on the safety warning, browse to the downloaded .pbiviz,
+   and select it.
+
+6. The TrustScore icon will appear at the bottom of the Visualizations
+   pane. Drag it onto your report canvas.
+
+7. Bind your data quality measures (Total Rows, Null Count, Duplicate
+   Count, Outlier Count, Failed Rule Count, Freshness Age) or a
+   Custom Score measure.
+
+
+HOW TO INSTALL IN POWER BI SERVICE (powerbi.com)
+------------------------------------------------
+
+1. Open a report in Edit mode in the Power BI Service.
+
+2. Visualizations pane -> three dots ("...") -> Import a visual from
+   a file -> pick the downloaded .pbiviz.
+
+
+TENANT POLICY BLOCKS THE IMPORT?
+--------------------------------
+
+Some Power BI tenants block uncertified custom visuals. If you see a
+policy error during import, ask your Power BI administrator to add
+this visual to the Organisational Visuals list:
+
+    Power BI Admin Portal
+        -> Tenant settings
+        -> Organisational visuals
+        -> Add a custom visual
+        -> Upload the .pbiviz from this folder
+
+Once added there, every user in your tenant can use the visual
+without further approval.
+
+
+CONTACT
+-------
+
+Author : Syed Hussnain Tahir Sherazi
+Site   : https://www.syedhussnain.com
+LinkedIn: https://uk.linkedin.com/in/hussnainsherazi
+Email  : contact@syedhussnain.co.uk
+GitHub : https://github.com/hussnaintahir13/trustscore-data-quality-scorecard
+
+
+LICENSE
+-------
+
+MIT. See the LICENSE file in the repository root.
